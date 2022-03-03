@@ -10,8 +10,9 @@ pages << {
             total_videos = total_videos.replace(',','');
             total = Number(total_videos);
             page = Math.round(total);
+            console.log(page);
             for(let i=0; i<page; i++){
-                await page.keyboard.press('end');
+                await page.keyboard.press('End');
             }
         "
     }
