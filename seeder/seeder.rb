@@ -1,5 +1,6 @@
 pages << {
     url: "https://www.youtube.com/playlist?list=PLWdN67pbVPSm2tixoc-mqBSGaaEsIB1Rg",
+    page_type: "listing",
     fetch_type: "browser",
     driver: {
         code: "
