@@ -9,9 +9,9 @@ pages << {
             total_videos = await total_videos.evaluate(el => el.textContent);
             total_videos = total_videos.replace(',','');
             total = Number(total_videos);
-            page = Math.round(total);
+            page_number = Math.round(total);
             console.log(page);
-            for(let i=0; i<page; i++){
+            for(let i=0; i<page_number; i++){
                 await page.keyboard.press('End');
             }
         "
