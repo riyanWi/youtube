@@ -4,7 +4,9 @@ pages << {
     fetch_type: "browser",
     driver: {
         code: "
-            total_videos = await page.$x('//*[@id=\"stats\"]/yt-formatted-string[1]/span[1]')[0].getProperty('textContent');
+            await page.waitForSelector('#stats .yt-formatted-string');
+            total_videos = await page.$('#stats .yt-formatted-string');
+            total_videos = await total_videos[0].evaluate(el => el.textContent);
             total_videos = total_videos.replace(',','');
             total = Number(total_videos);
             page = Math.round(total);
