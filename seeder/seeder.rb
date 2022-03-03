@@ -6,7 +6,7 @@ pages << {
         code: "
             await page.waitForSelector('#stats .yt-formatted-string');
             total_videos = await page.$('#stats .yt-formatted-string');
-            total_videos = await total_videos[0].evaluate(el => el.textContent);
+            total_videos = await total_videos.evaluate(el => el.textContent);
             total_videos = total_videos.replace(',','');
             total = Number(total_videos);
             page = Math.round(total);
