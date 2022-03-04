@@ -25,6 +25,12 @@ videos.each do |video|
         },
         vars: {
             img_url: img_url
+        },
+        driver: {
+            code: "await sleep(10000);",
+            goto_options: {
+                "waitUntil": "domcontentloaded"
+            }
         }
     }
 end
