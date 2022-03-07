@@ -5,8 +5,10 @@ videos = html.css('#content #container.ytd-playlist-video-renderer')
 videos.each do |video|
 
     url = video.at_css('a#thumbnail')['href']
+    id = url.scan(/v=(.*?)&/)
+    base_url = "https://www.youtube.com/watch?v="
     img_url = video.at_css('img#img')['src']
-    fullurl =  "https://www.youtube.com#{url}"
+    fullurl =  base_url+id.first[0]
     pages << {
         page_type: "videos",
         url:fullurl,
@@ -27,10 +29,7 @@ videos.each do |video|
             img_url: img_url
         },
         driver: {
-            code: "await sleep(10000);",
-            goto_options: {
-                "waitUntil": "domcontentloaded"
-            }
+            code: "await sleep(10000); await page.waitForSelector('span.view-count');",
         }
     }
 end
