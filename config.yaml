@@ -10,4 +10,7 @@ parsers:
   - file: ./parsers/videos.rb
     disabled: false
     page_type: videos
+
+exporters:
+  - file: ./exporters/product_json.yaml
   
