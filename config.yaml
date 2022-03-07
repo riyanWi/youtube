@@ -6,4 +6,8 @@ parsers:
   - file: ./parsers/listing.rb
     disabled: false
     page_type: listing
+
+  - file: ./parsers/videos.rb
+    disabled: false
+    page_type: videos
   
